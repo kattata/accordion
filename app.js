@@ -1,22 +1,22 @@
 const data = [
   {
-    title: "One",
+    title: "Dansk",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   },
   {
-    title: "Two",
+    title: "Matematik",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
   },
   {
-    title: "Three",
+    title: "Engelsk",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    title: "Four",
+    title: "Tysk",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   },
   {
-    title: "Five",
+    title: "Fransk",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
   },
 ];
@@ -48,21 +48,18 @@ const items = document.querySelectorAll(".accordion-item");
 const containers = document.getElementsByClassName(".container");
 
 const toggle = (e) => {
-  items.forEach((btn) => {
+  items.forEach(() => {
     let button = e.target;
     let buttonSpan = e.target.parentElement;
-    let item = e.target.parentElement.parentElement.parentElement;
     if (buttonSpan.classList.contains("active")) {
       buttonSpan.classList.remove("active");
       button.src = "assets/plus-blue.png";
-      item.style.color = "white";
     } else {
       buttonSpan.classList.add("active");
       button.src = "assets/minus-white.png";
-      item.style.color = "black";
     }
 
-    // let item = e.target.parentElement.parentElement.parentElement;
+    let item = e.target.parentElement.parentElement.parentElement;
     item.classList.toggle("active");
   });
 

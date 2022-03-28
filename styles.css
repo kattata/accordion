@@ -9,7 +9,8 @@ body {
 }
 
 .accordion {
-  margin: 30px 40px;
+  margin: 90px auto;
+  max-width: 700px;
 }
 
 .accordion-item {
@@ -76,4 +77,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.btn {
+  cursor: pointer;
 }

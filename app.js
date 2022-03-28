@@ -1,3 +1,4 @@
+// Data
 const data = [
   {
     title: "Dansk",
@@ -21,6 +22,7 @@ const data = [
   },
 ];
 
+// Display data
 const accordion = document.querySelector(".accordion");
 
 const displayData = () => {
@@ -43,37 +45,26 @@ const displayData = () => {
 
 displayData();
 
-const btns = document.querySelectorAll(".btn");
+// Accordion
 const items = document.querySelectorAll(".accordion-item");
-const containers = document.getElementsByClassName(".container");
 
-const toggle = (e) => {
-  items.forEach(() => {
-    let button = e.target;
-    let buttonSpan = e.target.parentElement;
-    if (buttonSpan.classList.contains("active")) {
-      buttonSpan.classList.remove("active");
-      button.src = "assets/plus-blue.png";
-    } else {
-      buttonSpan.classList.add("active");
-      button.src = "assets/minus-white.png";
-    }
+items.forEach((item) => {
+  const btn = item.querySelector(".btn");
+  const btnSpan = btn.parentElement;
+  const body = item.querySelector(".body");
 
-    let item = e.target.parentElement.parentElement.parentElement;
+  btn.addEventListener("click", () => {
     item.classList.toggle("active");
+    body.classList.toggle("active");
+    btnSpan.classList.toggle("active");
+
+    if (body.classList.contains("active")) {
+      btn.src = "assets/minus-white.png";
+      let bodyHeight = `${body.scrollHeight + 20}px`;
+      body.style.maxHeight = bodyHeight;
+    } else {
+      btn.src = "assets/plus-blue.png";
+      body.style.maxHeight = "0px";
+    }
   });
-
-  let body =
-    e.target.parentElement.parentElement.parentElement.lastElementChild;
-  body.classList.toggle("active");
-  if (body.classList.contains("active")) {
-    let bodyHeight = `${body.scrollHeight + 20}px`;
-    body.style.maxHeight = bodyHeight;
-  } else {
-    body.style.maxHeight = "0px";
-  }
-};
-
-btns.forEach((btn) => {
-  btn.addEventListener("click", (e) => toggle(e));
 });

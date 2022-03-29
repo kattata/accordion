@@ -30,12 +30,12 @@ body {
 }
 
 .header {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 h2 {
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .flex {
@@ -61,8 +61,8 @@ span {
   display: block;
   position: relative;
   background-color: white;
-  height: 36px;
-  width: 36px;
+  height: 40px;
+  width: 40px;
   display: block;
   border-radius: 100%;
 }
@@ -72,7 +72,8 @@ span.active {
 }
 
 img {
-  height: 16px;
+  height: 12px;
+  width: 12px;
   position: absolute;
   top: 50%;
   left: 50%;
